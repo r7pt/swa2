@@ -6,7 +6,10 @@ from App.models import User
 from App.models import Student
 from App.models import Staff
 from App.main import create_app
-from App.controllers import (create_user,create_staff, get_all_users_json, get_all_users, initialize)
+from App.controllers.staff_controller import StaffController
+from App.controllers.accolade_controller import AccoladeController
+from App.controllers.student_controller import StudentController
+from App.controllers import (create_user, get_all_users_json, get_all_users, initialize)
 
 
 # This commands file allow you to create convenient CLI commands for testing controllers
@@ -18,25 +21,25 @@ migrate = get_migrate(app)
 @app.cli.command("init", help="Creates and initializes the database")
 def init():
     initialize()
-    jack = Student(name='Jack')
-    jill = Student(name='Jill')
-    mick = Staff(name='Mick')
+    jack = Student(name='Jack', password='jackpass')
+    jill = Student(name='Jill', password='jillpass')
+    mick = Staff(name='Mick', password='mickpass')
     db.session.add_all([jack, jill, mick])
     db.session.commit()
     #stu = Student.query.all()
     #staff = Staff.query.all()
     #stu = get_all_students()
     print('database intialized')
-    print("this is students " + str(stu))
+    #print("this is students " + str(stu))
     #print("this is staff " + str(staff))
 
-@app.cli.command("createstaff", help="Creates and initializes the database")
-def create_user_action():
-    #data = request.get_json()
-    name="kilddgdgde"
+#@app.cli.command("createstaff", help="Creates and initializes the database")
+#def create_user_action():
+ #   #data = request.get_json()
+ #   name="kilddgdgde"
 
-    staff, status = create_staff(name)
-    print(str(staff) + str(status))
+ #   staff, status = create_staff(name,password)
+  #  print(str(staff) + str(status))
 
 '''
 User Commands
