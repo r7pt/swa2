@@ -2,15 +2,8 @@ from flask import Blueprint, render_template, jsonify, request, send_from_direct
 from flask_jwt_extended import jwt_required, current_user as jwt_current_user
 
 
-from App.controllers import (
-  create_user,
-  get_all_students,
-  login_student,
-  get_student_by_id,
-  unset_jwt_cookies,
-  add_student_hours,
-  create_student
-)
+from App.controllers.student_controller import StudentController
+from App.controllers import unset_jwt_cookies
 
 student_views = Blueprint('student_views', __name__, template_folder='../templates')
 
@@ -23,10 +16,10 @@ def student_login_paage(name):
   return response
 
 @student_views.route('/newstudent', methods=['POST'])
-def create_user_action(studentID):
+def create_user_action():
     data = request.get_json()
     student_name = data.get("name")
-    student, status = create_student(studentID)
+    student, status = create_student(student_name)
     return jsonify(student), status
 
 
