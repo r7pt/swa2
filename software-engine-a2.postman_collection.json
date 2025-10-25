@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "c6a46a70-a5a4-497f-803f-7997d977ea27",
+		"name": "software-engine-a2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40938630"
+	},
+	"item": [
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ki\",\r\n    \"password\": \"kipass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/student",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaderborad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/students/leaderboard",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"students",
+						"leaderboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "studentlogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ki\",\r\n    \"password\": \"kipass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/studentlogin",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"studentlogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/studentlogout",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"studentlogout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create staff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"kkdia\",\r\n    \"password\":\"kkdiapass\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/newstaff",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"newstaff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staff login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"kkdia\",\r\n    \"password\":\"kkdiapass\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/stafflogin",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"stafflogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staff logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"kkdia\",\r\n    \"password\":\"kkdiapass\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/stafflogout",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"stafflogout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staff-create_accolade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"fukiog\",\r\n    \"description\":\"idko \",\r\n    \"hours_needed\":\"9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/staff/accolade",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"staff",
+						"accolade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student request hours",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentID\":\"4\",\r\n    \"staffID\":\"3\",\r\n    \"amount\":\"40\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/student/reqHours",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"student",
+						"reqHours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staff confirm hours",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recordID\":\"3\",\r\n    \"staffID\":\"1\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/staff/confirm_hours",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"staff",
+						"confirm_hours"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "staff award accolade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"student_id\":\"3\",\r\n    \"accolade_id\":\"6\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/awardaccolade",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"awardaccolade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student view  accolades",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentID\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/students/accolades",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"students",
+						"accolades"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
